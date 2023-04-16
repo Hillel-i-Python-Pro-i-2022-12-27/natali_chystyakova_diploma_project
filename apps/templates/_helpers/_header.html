@@ -2,7 +2,9 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="{% url "root:index"  %}">
         <img class="logo" src="{% static "/logo/logo.svg" %}" alt="site-logo"/>
+    </a>
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'admin:index' %}">Admin panel</a>
@@ -29,7 +31,12 @@
                 <div class="user-avatar">
                     {% if user.avatar %}
                         <img src="{{ user.avatar.url }}" alt="Avatar">
+                    {% else %}
+
+                        <img src="{% static "/images/avatar-placeholder.svg" %}" alt="Avatar">
+
                     {% endif %}
+
                 </div>
             </div>
 
