@@ -1,12 +1,12 @@
-.PHONY: d-homework-i-run
-# Make all actions needed for run homework from zero.
-d-homework-i-run:
-	@make init-config-i-homework && \
+.PHONY: d-project-i-run
+# Make all actions needed for run project from zero.
+d-project-i-run:
+	@make init-config-i-project && \
 	make d-run
 
-.PHONY: d-homework-i-purge
-# Make all actions needed for purge homework related data.
-d-homework-i-purge:
+.PHONY: d-project-i-purge
+# Make all actions needed for purge project related data.
+d-project-i-purge:
 	@make d-purge
 
 
@@ -47,20 +47,20 @@ init-dev:
 	pip install --requirement requirements.txt && \
 	pre-commit install
 
-.PHONY: init-config-i-homework
-# Init configs for homework
-init-config-i-homework:
-	@cp .env.homework .env &&\
-		cp docker-compose.override.homework.yml docker-compose.override.yml
+.PHONY: init-config-i-project
+# Init configs for project
+init-config-i-project:
+	@cp .env.project .env &&\
+		cp docker-compose.override.project.yml docker-compose.override.yml
 
-.PHONY: homework-i-run
-# Run homework.
-homework-i-run:
+.PHONY: project-i-run
+# Run project.
+project-i-run:
 	@python manage.py runserver
 
 
-.PHONY: homework-i-purge
-homework-i-purge:
+.PHONY: project-i-purge
+project-i-purge:
 	@echo Goodbye
 
 
