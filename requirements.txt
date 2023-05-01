@@ -1,0 +1,36 @@
+
+webargs==8.2.0
+#For name generator - генератор фейковых имен
+
+
+#[code_style]-[BEGIN]
+#Pre_commit hook - проверяет перед комитами
+pre-commit==3.2.2
+#Upgrage syntax - обновлять синтаксис, например: анотация типов
+pyupgrade==3.3.1
+#Formatter. Apply codestyle
+black==23.3.0
+#Check odestyle
+flake8==6.0.0
+#Removes unused imports and unused variables
+autoflake==2.0.2
+#[code_style]-[END]
+
+#For making requests
+requests==2.28.2
+
+#Core
+django==4.2.0
+
+#For images
+Pillow==9.5.0
+
+#For forns
+crispy-bootstrap5==0.7
+
+#For enviromment variables and configuration
+django-environ==0.10.0
+
+# For PostgreSQL.
+psycopg2-binary==2.9.6
+
