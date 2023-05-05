@@ -34,3 +34,7 @@ django-environ==0.10.0
 # For PostgreSQL.
 psycopg2-binary==2.9.6
 
+
+aiohttp[speedups]==3.8.4
+
+beautifulsoup4==4.12.2
