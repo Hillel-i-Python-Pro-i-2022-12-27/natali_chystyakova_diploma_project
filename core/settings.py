@@ -54,6 +54,7 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     "apps.user",
     "apps.base",
+    "apps.project_functionality",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
