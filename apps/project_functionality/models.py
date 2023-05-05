@@ -20,10 +20,12 @@ class HelpPoint(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
-        list_object = get_some_content_from_page_main()  # получаем список из другой функции
-        # сохраняем список в поле list_object
-        self.list_object = "\n".join(list_object)
-        super().save(*args, **kwargs)
+        data_from_page = get_some_content_from_page_main()
+        for item in data_from_page:
+            object = item
+            for l_object in object:
+                self.list_object = "\n".join(l_object)
+                super().save(*args, **kwargs)
 
     def __str__(self) -> str:
         return f"{self.list_object}"
