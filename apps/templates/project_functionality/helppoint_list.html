@@ -1,0 +1,41 @@
+{% extends "_helpers/_base.html" %}
+
+{%  block title %}
+
+    Пункты помощи для переселенцев
+{%  endblock  %}
+
+{%  block content %}
+    <h3> Пункты помощи для переселенцев в г.Днепр</h3>
+    <p> Где найти пункты помощи для преселенцев в г.Днепр, помощь с одеждой, едой...</p>
+    <p> Мы собрали для вас всю информацию</p>
+
+    <ul>
+        {% for point in list_object %}
+            <li class="row my-elements-box">
+                <div class="col my-element-style">
+
+                    <div class="my-element-content">
+                        <span>{{ point.list_object }} </span>
+
+                        <span>{{ point.created_at }}</span>
+                    </div >
+
+                    <div class="my-element-controls">
+                        <a href="{% url "project_functionality:update" pk=point.id %}">
+                            <button class="btn btn-success">
+                                Edit
+                            </button>
+                        </a>
+                        <a href="{% url "project_functionality:delete" pk=point.id %}">
+                            <button class="btn btn-warning">
+                                Delete
+                            </button>
+                        </a>
+
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
